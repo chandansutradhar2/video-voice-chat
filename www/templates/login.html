@@ -1,0 +1,21 @@
+<ion-view view-title="" hide-back-button="true">
+	<ion-content class="padding-lots" scroll="false">
+		<div class="logo" ng-class="{input: input}">
+			<h1 class="a">video</h1>
+			<h1 class="b">chat</h1>
+		</div>
+		<form ng-submit="login()" class="login">
+			<div class="list">
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Username</span>
+					<input type="text" ng-model="data.username" ng-focus="focus()" ng-blur="blur()">
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Password</span>
+					<input type="password" ng-model="data.password" ng-focus="focus()" ng-blur="blur()">
+				</label>
+			</div>
+			<button type="submit" class="button button-full button-light">Log in</button>
+		</form>
+	</ion-content>
+</ion-view>

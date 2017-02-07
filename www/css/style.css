@@ -1,0 +1,345 @@
+#local {
+	position: absolute;
+	z-index: -1;
+	display: block;
+	visibility: visible;
+	height: 10%;
+	bottom: 50px;
+	right: 10px;
+	pointer-events: none;
+	opacity: 1;
+	-webkit-transform: scaleX(-1);
+}
+#local.preview,
+#remote {
+	position: absolute;
+	z-index: -2;
+	display: block;
+	visibility: visible;
+	width: 100vw;
+	height: 100vh;
+	pointer-events: none;
+	opacity: 1;
+	object-fit: cover;
+	top: 0;
+	right: 0;
+}
+.call-buttons {
+	position: absolute;
+	z-index: 99999;
+	bottom: 17vh;
+	text-align: center;
+	width: 100%;
+}
+.call-buttons .button {
+	border-radius: 100%;
+	margin: 1.2em;
+	height: 4em;
+	width: 4em;
+	transition: all 0.1s ease;
+	padding-top: 0.2em;
+	text-align: center;
+}
+.call-buttons span:before {
+	font-size: 2.4em !important;
+}
+.videos {
+	font-size: 0;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	transition: all 1s;
+	pointer-events: none;
+}
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+.inCall .modal,
+.inCall .modal-backdrop-bg,
+.inCall .pane,
+.inCall .view,
+.item,
+.item-content,
+.item-content,
+body.inCall,
+html {
+	background-color: transparent !important;
+}
+*::-webkit-media-controls-panel {
+	display: none!important;
+	-webkit-appearance: none;
+}
+*::--webkit-media-controls-play-button {
+	display: none!important;
+	-webkit-appearance: none;
+}
+*::-webkit-media-controls-start-playback-button {
+	display: none!important;
+	-webkit-appearance: none;
+}
+.call-modal {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+.inCall .nav-bar-container,
+.inCall .view-container {
+	display: none;
+}
+.inCall .inCallUI {
+	display: inherit;
+}
+body:not(.inCall) .pane {
+	background: linear-gradient(135deg, #242a3f 0%,#0f131a 100%);
+	color: #fff;
+}
+.bar-clear,
+.item p,
+h1,
+h2,
+h3 p {
+	color: #fff;
+}
+body,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+input,
+p {
+	font-family: 'Source Sans Pro', Helvetica, sans-serif;
+}
+.account-image {
+	height: 180px;
+	width: 180px;
+	margin: 0 auto;
+	overflow: hidden;
+	border-radius: 100%;
+}
+.account-image img {
+	height: 100%;
+	width: 100%;
+}
+.chat-list .item {
+	border-color: rgba(150,150,150,.15);
+	border-left: none;
+	border-right: none;
+}
+.chat-list .item .last-time {
+	display: flex;
+	right: 30px;
+	position: absolute;
+	top: 20px;
+	color: #fff;
+	font-size: 11px;
+	opacity: 0.8;
+}
+.chat-list .item:first-child {
+	border-top: none;
+}
+.chat-list .item:last-child {
+	border-bottom: none;
+}
+.last-text {
+	font-style: italic;
+}
+.item-avatar .item-content > img:first-child {
+	max-width: 48px;
+	max-height: 48px;
+	left: 0;
+}
+.item-avatar .item-content {
+	padding-left: 72px;
+	padding-top: 21px;
+}
+.padding-lots {
+	padding: 24px;
+}
+.item h2 {
+	font-weight: bold;
+	margin: 0;
+}
+.chat-animate-on .chat-item.ng-enter {
+	-webkit-animation: fadeInUp 0.4s;
+	animation: fadeInUp 0.4s;
+}
+.chat-list .item.ng-enter {
+	-webkit-animation: fadeInLeft 0.4s;
+	animation: fadeInLeft 0.4s;
+}
+.chat-list .item.ng-leave {
+	-webkit-animation: fadeOutLeft 0.4s;
+	animation: fadeOutLeft 0.4s;
+}
+.chat-list .item.ng-enter-stagger {
+	-webkit-animation-delay: 100ms;
+	animation-delay: 100ms;
+	-webkit-animation-duration: 0;
+	animation-duration: 0;
+}
+.chat-list .item h2,
+.chat-list .item img,
+.chat-list .item p {
+	transition: all 0.3s ease;
+}
+.chat-list .item.online img::before {
+	content: ' ';
+	display: block;
+	position: absolute;
+	height: 20px;
+	width: 20px;
+	background: red;
+}
+.chat-list .item-icon-right .icon-accessory {
+	right: -9px;
+	padding-top: 7px;
+}
+.chat-list .item-avatar {
+	min-height: 80px;
+}
+.chat-list .item:not(.online) h2,
+.chat-list .item:not(.online) img,
+.chat-list .item:not(.online) p {
+	opacity: 0.3;
+}
+.chat-item img {
+	height: 40px;
+	width: 40px;
+}
+.chat-item p {
+	background: rgba(255,255,255,.1);
+	border-radius: 8px;
+	padding: 6px 8px;
+	overflow: visible;
+	text-overflow: inherit;
+	white-space: normal;
+}
+.chat-to.item-avatar {
+	padding-right: 72px;
+	padding-left: 16px;
+}
+.chat-to.item-avatar img {
+	right: 16px;
+	left: auto;
+}
+.chat .item:not(.chat-first) img {
+	display: none;
+}
+.chat .item.chat-first {
+	margin-top: 1em;
+}
+.chat .item {
+	border: none;
+}
+.chat .item-avatar {
+	min-height: auto;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.chat .item img {
+	top: 8px;
+	max-height: 40px;
+	max-width: 40px;
+}
+.chat {
+	padding-bottom: 40px;
+}
+.account {
+	text-align: center;
+}
+.account h2 {
+	font-size: 3em;
+	font-weight: 300;
+	margin-bottom: 2em;
+}
+.state-login .pane {
+	background: url('../img/login.jpg') no-repeat center center !important;
+	background-size: cover !important;
+}
+.logo, .logo h1 {
+	text-align: center;
+	transition: all .3s ease;
+}
+.logo.input {
+	margin-top: -33vh;
+}
+
+.logo.input h1 {
+	smargin-top: 0px;
+	smargin-bottom: 0px;
+}
+h1.a,
+h1.b {
+	font-size: 5em;
+	line-height: 0.8em;
+	text-transform: uppercase;
+}
+h1.a {
+	font-weight: 100;
+	font-style: italic;
+	margin-top: 5vh;
+}
+h1.b {
+	font-weight: 800;
+	margin-bottom: 10vh;
+}
+.login .item {
+	border: 0;
+}
+.login .item-input {
+	padding: 0;
+}
+.login .input-label {
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-top: 0.7em;
+}
+.login input {
+	color: #fff;
+	border: 1px solid #fff;
+	background: transparent;
+	border-radius: 8px;
+	padding: 1.2em 0.8em;
+	margin-top: 0.4em;
+	font-size: 1.1em;
+}
+.login .button.button-full {
+	border-radius: 6px;
+	margin-top: 2em;
+	font-weight: 900;
+	text-transform: uppercase;
+	font-size: 1.4em;
+	color: #0c1b24;
+}
+.button-block {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.login {
+	max-width: 400px;
+	margin: 0 auto;
+}
+.bar .buttons span.back-text {
+	display: none;
+}
+.popup-container.active .popup {
+	border-radius: 8px;
+}
+.contact-card {
+	width: 100%;
+	height: 100%;
+}
+.contact-card img {
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+	overflow: hidden;
+}

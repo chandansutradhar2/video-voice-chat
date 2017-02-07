@@ -1,0 +1,23 @@
+<ion-view view-title="{{contact.name || contact.username}}">
+	<ion-nav-buttons side="right">
+		<button ng-click="triggerCall(contact.id)" class="button button-balanced button-outline"><i class="icon ion-ios-videocam-outline"></i></button>
+	</ion-nav-buttons>
+	<ion-content class="padding" delegate-handle="chatDetail">
+		<ion-list class="chat" ng-class="{'chat-animate-on': animateChat}" messages>
+			<ion-item class="chat-item item-avatar item-remove-animate" type="item-text-wrap" ng-repeat="message in messages" ng-class="{'chat-first': message.first, 'chat-to':message.from!=contact.id, 'chat-from': message.from==contact.id}">
+				<img user="{{message.from}}">
+				<p class="chat-text">{{message.message}}</p>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+	<form ng-submit="send()">
+		<ion-footer-bar align-title="left" class="bar-light item-input-inset" keyboard-attach>
+			<label class="item-input-wrapper">
+				<input type="text" message="true" ng-blur="blurInput()" placeholder="Say something..." ng-model="data.message" id="messageBox">
+			</label>
+			<button type="submit" class="button button-clear">
+				Send
+			</button>
+		</ion-footer-bar>
+	</form>
+</ion-view>

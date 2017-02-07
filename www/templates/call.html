@@ -1,0 +1,31 @@
+<ion-modal-view class="call-modal">
+	<ion-header-bar ng-class="{'bar-positive': isInCall, 'bar-assertive': isAnswering || isCalling}">
+		<h1 class="title">
+			<span ng-if="isAnswering">Incoming Call from <b>{{contact.name || contact.username}}</b></span>
+			<span ng-if="isCalling">Calling <b>{{contact.name || contact.username}}</b></span>
+			<span ng-if="isInCall"><b>{{contact.name || contact.username}}</b></span>
+		</h1>
+		<button class="button button-clear" ng-click="hideCall()" ng-if="isInCall">
+			Hide
+		</button>
+	</ion-header-bar>
+	<ion-content scroll="false">
+		<div class="call-buttons inCallUI">
+			<button class="button button-answering button-balanced" ng-if="isAnswering" ng-click="answer()"><span class="icon ion-ios-telephone-outline"></span></button>
+			<button class="button button-answering button-assertive" ng-if="isAnswering" ng-click="ignore()"><span class="icon ion-ios-close-empty"></span></button>
+
+			<button class="button button-calling button-assertive button-outline" ng-if="isCalling" ng-click="cancel()"><span class="icon ion-ios-close-empty"></span></button>
+
+			<button class="button button-incall button-light button-outline" ng-if="isInCall" ng-click="toggleFacing()"><span class="icon ion-ios-reverse-camera-outline"></span></button>
+			<button class="button button-incall button-outline button-assertive" ng-if="isInCall" ng-click="endCall()"><span class="icon ion-ios-close-empty"></span></button>
+			<button class="button button-incall button-light button-outline" ng-if="isInCall" ng-click="toggleMute()">
+				<span class="icon ion-ios-mic-off" ng-if="!muted"></span>
+				<span class="icon ion-ios-mic-outline" ng-if="muted"></span>
+			</button>
+		</div>
+		<div class="videos inCallUI">
+			<video id="remote" autoplay="true" ng-if="remoteVideo" ng-src="{{remoteVideo}}"></video>
+			<video id="local" autoplay="true" ng-if="localVideo" ng-src="{{localVideo}}" ng-class="{preview: isCalling || isAnswering}"></video>
+		</div>
+	</ion-content>
+</ion-modal-view>

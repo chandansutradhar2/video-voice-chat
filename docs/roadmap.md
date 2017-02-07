@@ -1,0 +1,26 @@
+### Feature Roadmap
+
+- Mute microphone
+- Camera flipping
+- Push notifications
+- Phone number authentication with Twilio
+- Profile image update
+- Group chat
+- Customizable contact list
+- Group video chat
+- Voice chat
+- Audio, video, image attachments
+- Quality lowering/raising by connection speed
+- Stickers & packs
+- Doodles
+- Screen share for desktop
+- Load balanced signal server
+- Fadeout video controls on tap
+- Dropped connection Re-negotiation
+- Deletable messages
+- Read and unread status
+- Query sanitize
+- Local storage chats
+- Delivered and read receipts
+- Use objectid in db
+- Use sessions for multi devices per user
